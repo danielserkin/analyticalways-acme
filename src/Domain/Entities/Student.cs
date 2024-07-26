@@ -1,13 +1,17 @@
-﻿namespace Domain.Entities;
+﻿using Domain.ValueObjects;
 
-public  class Student : BaseEntity<Guid>
+namespace Domain.Entities;
+
+public class Student : BaseEntity<Guid>
 {
-    public Student(Guid id, string name, DateTime birthDate)
+    public Student(Guid id, string name, Age age)
     {
         Id = id;
         Name = name ?? throw new ArgumentNullException(nameof(name));
-        BirthDate = birthDate;        
+        Age = age ?? throw new ArgumentNullException(nameof(age));
     }
+
     public string Name { get; private set; }
-    public DateTime BirthDate { get; private set; }
+    public Age Age { get; private set; }
+
 }

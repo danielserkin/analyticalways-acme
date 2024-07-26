@@ -2,22 +2,22 @@
 
 public class Course : BaseEntity<Guid>
 {
-    public Course(Guid id, string name, decimal fee, DateTime startDate, DateTime endDate)
+    public Course(Guid id, CourseName name, CourseFee fee, CourseStartDate startDate, CourseEndDate endDate)
     {
         Id = id;
-        Name = name ?? throw new ArgumentNullException(nameof(name));
+        Name = name;
         Fee = fee;
         StartDate = startDate;
         EndDate = endDate;
-        
-        if (startDate >= endDate)
+
+        if (startDate.Value >= endDate.Value)
         {
-            throw new ArgumentException("");
+            throw new ArgumentException("La fecha de inicio no puede ser igual o posterior a la fecha de fin.");
         }
     }
-    
-    public string Name { get; private set; }
-    public decimal Fee { get; private set; }
-    public DateTime StartDate { get; private set; }
-    public DateTime EndDate { get; private set; }
+
+    public CourseName Name { get; private set; }
+    public CourseFee Fee { get; private set; }
+    public CourseStartDate StartDate { get; private set; }
+    public CourseEndDate EndDate { get; private set; }
 }
