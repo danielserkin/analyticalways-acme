@@ -7,7 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "src\Domain\Domain
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{569F46AF-D26A-44CA-8091-E0DE8AD0EBB1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "src\Application\Application.csproj", "{0DBA0406-B96A-4551-8E19-11F22FE98040}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "src\Application\Application.csproj", "{0DBA0406-B96A-4551-8E19-11F22FE98040}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{59B41BB6-8279-47F6-8A87-42A1D9AB88AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "test\Tests\Tests.csproj", "{E50F2D8D-628F-41F3-BF3B-08E433C9D37F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +27,10 @@ Global
 		{0DBA0406-B96A-4551-8E19-11F22FE98040}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DBA0406-B96A-4551-8E19-11F22FE98040}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0DBA0406-B96A-4551-8E19-11F22FE98040}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E50F2D8D-628F-41F3-BF3B-08E433C9D37F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E50F2D8D-628F-41F3-BF3B-08E433C9D37F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E50F2D8D-628F-41F3-BF3B-08E433C9D37F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E50F2D8D-628F-41F3-BF3B-08E433C9D37F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -30,9 +38,10 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{EF54A789-34DA-4228-B37F-57D32FAA88CB} = {569F46AF-D26A-44CA-8091-E0DE8AD0EBB1}
 		{0DBA0406-B96A-4551-8E19-11F22FE98040} = {569F46AF-D26A-44CA-8091-E0DE8AD0EBB1}
+		{E50F2D8D-628F-41F3-BF3B-08E433C9D37F} = {59B41BB6-8279-47F6-8A87-42A1D9AB88AC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		FileExplorer = 
 		SolutionGuid = {5A6D0AB6-950C-463D-AB4D-224869C74793}
+		FileExplorer = 
 	EndGlobalSection
 EndGlobal

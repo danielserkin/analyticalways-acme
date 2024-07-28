@@ -7,9 +7,9 @@ public class Course : BaseEntity<Guid>
 
     private readonly List<Student> _students = new();
 
-    public Course(Guid id, CourseName name, CourseFee fee, CourseStartDate startDate, CourseEndDate endDate)
+    public Course(CourseName name, CourseFee fee, CourseStartDate startDate, CourseEndDate endDate)
     {
-        Id = id;
+        Id = Guid.NewGuid();
         Name = name;
         Fee = fee;
         StartDate = startDate;

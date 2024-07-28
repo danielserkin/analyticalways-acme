@@ -20,7 +20,7 @@ public class RegisterCourseUseCase
         var startDate = new CourseStartDate(request.StartDate);
         var endDate = new CourseEndDate(request.EndDate);
 
-        var course = new Course(Guid.NewGuid(), courseName, courseFee, startDate, endDate);
+        var course = new Course(courseName, courseFee, startDate, endDate);
 
         await _courseRepository.AddAsync(course);
 

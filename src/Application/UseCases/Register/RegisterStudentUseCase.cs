@@ -1,7 +1,5 @@
 ﻿using Domain.Entities;
-using Domain.Exceptions;
 using Domain.Repositories;
-using Domain.ValueObjects;
 
 namespace Application.UseCases.Register;
 
@@ -16,11 +14,18 @@ public class RegisterStudentUseCase
 
     public async Task<RegisterStudentResponse> HandleAsync(RegisterStudentRequest request)
     {
-        var age = new Age(request.Age);
-        var student = new Student(Guid.NewGuid(), request.Name, age);
+        try
+        {
+            var student = new Student(request.Name, request.BirthDate);
 
-        await _studentRepository.AddAsync(student);
+            await _studentRepository.AddAsync(student);
 
-        return new RegisterStudentResponse(student.Id);
+            return new RegisterStudentResponse(student.Id);
+        }
+        catch (Exception ex)
+        {
+            return new RegisterStudentResponse(Guid.Empty, false, ex.Message);
+        }
+
     }
 }
