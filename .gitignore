@@ -7,3 +7,5 @@
 /src/Domain/obj
 /src/Application/bin/Debug/net8.0
 /src/Domain/bin/Debug/net8.0
+/test/Tests/bin/Debug/net8.0
+/test/Tests/obj
