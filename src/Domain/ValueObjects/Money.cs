@@ -8,11 +8,9 @@ public record Money
     public Money(decimal amount, string currency)
     {
         if (amount < 0)
-        {
-            throw new ArgumentException("El monto no puede ser negativo.");
-        }
+            throw new ArgumentException("The amount cannot be negative.");       
 
         Amount = amount;
-        Currency = currency;
+        Currency = currency?? throw new ArgumentNullException(nameof(currency));
     }
 }

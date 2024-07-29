@@ -5,9 +5,7 @@
     public CourseName(string value)
     {
         if (string.IsNullOrWhiteSpace(value))
-        {
-            throw new ArgumentException("El nombre del curso no puede estar vacío.");
-        }
+            throw new ArgumentNullException(nameof(value));
 
         Value = value;
     }

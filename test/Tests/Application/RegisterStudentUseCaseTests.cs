@@ -4,7 +4,6 @@ using Domain.Repositories;
 using Application.UseCases.Register;
 using FluentAssertions;
 using Moq;
-using Domain.ValueObjects;
 
 namespace UnitTests.Application.UseCases.Register
 {
