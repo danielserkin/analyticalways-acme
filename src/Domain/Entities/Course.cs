@@ -15,7 +15,7 @@ public class Course : BaseEntity<Guid>
         StartDate = startDate;
         EndDate = endDate;
 
-        if (startDate.Value >= endDate.Value)
+        if (startDate.Value.Date >= endDate.Value.Date)
             throw new InvalidCourseDateRangeException(); 
         
     }

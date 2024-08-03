@@ -6,7 +6,7 @@ using Application.UseCases.Register;
 using FluentAssertions;
 using Moq;
 
-namespace UnitTests.Application.UseCases.Register
+namespace Tests.Application.UseCases
 {
     public class RegisterCourseUseCaseTests
     {
@@ -17,8 +17,8 @@ namespace UnitTests.Application.UseCases.Register
         {
             _fixture = new Fixture();
             _fixture.Customize<RegisterCourseRequest>(composer => composer
-                .With(r => r.StartDate, DateTime.UtcNow.AddDays(1)) 
-                .With(r => r.EndDate, DateTime.UtcNow.AddDays(30))); 
+                .With(r => r.StartDate, DateTime.UtcNow.AddDays(1))
+                .With(r => r.EndDate, DateTime.UtcNow.AddDays(30)));
 
             _courseRepositoryMock = new Mock<ICourseRepository>();
             _courseRepositoryMock.Setup(repo => repo.AddAsync(It.IsAny<Course>()))
@@ -49,8 +49,8 @@ namespace UnitTests.Application.UseCases.Register
         public async Task HandleAsync_WithInvalidDateRange_ShouldThrowInvalidCourseDateRangeException()
         {
             // Arrange
-            var startDate = DateTime.UtcNow.AddDays(30); 
-            var endDate = DateTime.UtcNow; 
+            var startDate = DateTime.UtcNow.AddDays(30);
+            var endDate = DateTime.UtcNow;
 
             var request = new RegisterCourseRequest
             {

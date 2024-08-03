@@ -5,7 +5,7 @@ using Application.UseCases.Register;
 using FluentAssertions;
 using Moq;
 
-namespace UnitTests.Application.UseCases.Register
+namespace Tests.Application.UseCases
 {
     public class RegisterStudentUseCaseTests
     {
@@ -23,7 +23,7 @@ namespace UnitTests.Application.UseCases.Register
         {
             // Arrange
             var request = _fixture.Build<RegisterStudentRequest>()
-               .With(r => r.BirthDate, GenerateValidBirthDate()) 
+               .With(r => r.BirthDate, GenerateValidBirthDate())
                .Create();
 
             var studentRepositoryMock = new Mock<IStudentRepository>();
@@ -46,7 +46,7 @@ namespace UnitTests.Application.UseCases.Register
             studentRepositoryMock.Verify(repo => repo.AddAsync(It.IsAny<Student>()), Times.Once);
         }
 
-       
+
 
         [Fact]
         public async Task HandleAsync_WithInvalidAge_ShouldReturnFailureResponse()
@@ -109,7 +109,7 @@ namespace UnitTests.Application.UseCases.Register
         private DateTime GenerateValidBirthDate()
         {
             var today = DateTime.Today;
-            var maxBirthDate = today.AddYears(-18); 
+            var maxBirthDate = today.AddYears(-18);
 
             var start = new DateTime(1900, 1, 1);
             var range = (maxBirthDate - start).Days;

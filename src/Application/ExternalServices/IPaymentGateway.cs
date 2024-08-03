@@ -2,5 +2,5 @@
 
 public interface IPaymentGateway
 {
-    Task<bool> ProcessPaymentAsync(decimal amount, string currency);
+    Task<ProcessPaymentResponse> ProcessPaymentAsync(ProcessPaymentRequest request);
 }

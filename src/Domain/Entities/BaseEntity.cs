@@ -3,7 +3,6 @@ namespace Domain.Entities;
 
 public abstract class BaseEntity<TKey> 
 {
-    [Key]
     public TKey Id { get; protected set; } = default!;
 
     public DateTime CreadoEn { get; protected set; }
