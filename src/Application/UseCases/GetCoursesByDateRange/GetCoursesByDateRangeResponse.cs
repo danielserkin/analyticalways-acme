@@ -11,4 +11,5 @@ public class GetCoursesByDateRangeResponse
     {
         Courses = courses;
     }
+
 }

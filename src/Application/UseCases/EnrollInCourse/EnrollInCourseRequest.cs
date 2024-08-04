@@ -15,9 +15,6 @@ public class EnrollInCourseRequest
             throw new NullPaymentMethodException();        
 
         if (string.IsNullOrEmpty(CallBackUrl))
-            throw new NullPaymentMethodException();
-
-        if (!Uri.TryCreate(CallBackUrl, UriKind.Absolute, out _))
-            throw new NullOrEmptyCallBackUrlException();        
+            throw new NullOrEmptyCallBackUrlException();
     }
 }

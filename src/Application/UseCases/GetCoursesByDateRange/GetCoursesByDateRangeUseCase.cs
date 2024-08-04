@@ -14,6 +14,8 @@ public class GetCoursesByDateRangeUseCase
 
     public async Task<GetCoursesByDateRangeResponse> HandleAsync(GetCoursesByDateRangeRequest request)
     {
+        request.Validate();
+
         var courses = await _courseRepository.GetByDateRangeAsync(request.StartDate, request.EndDate);
 
         var courseDtos = courses.Select(c => new CourseDto

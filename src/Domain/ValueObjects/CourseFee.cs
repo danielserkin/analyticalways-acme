@@ -7,10 +7,8 @@ public record CourseFee
     public CourseFee(Money value)
     {
         if (value == null)
-        {
             throw new ArgumentNullException(nameof(value));
-        }
-
+        
         Value = value;
     }
 }

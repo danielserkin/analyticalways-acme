@@ -33,6 +33,7 @@ public class EnrollInCourseUseCase
 
         if(IsPaymentRequired(course))
         {
+            request.ValidateInfoPayment();
             await EnrrolProcessPaymentAsync(course.Fee.Value.Amount, course.Fee.Value.Currency,request.CallBackUrl,request.PaymentMethod.Value);
             return new EnrollInCourseResponse(EnrrolStatus.PendingPayment);
         }
